@@ -4,6 +4,7 @@ import './App.css';
 
 import SystemMessage from './components/SystemMessage'
 import MainTitle from './components/MainTitle'
+import Player from './components/Player'
 class App extends Component {
   render() {
     return (

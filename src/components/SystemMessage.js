@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import { subscribeToMind } from './api';
+
 
 const Container = styled.div`
     background: red;
@@ -15,10 +17,17 @@ const Text = styled.p`
 `
 
 class SystemMessage extends Component {
+    constructor(props) {
+        super(props);
+        
+        subscribeToMind((err, mindEvent) => this.setState({ 
+          mindEvent 
+        }));
+      }
     render() {
         return (
             <Container>
-                <Text>No Messages</Text>
+                <Text>No message</Text>
             </Container>
         )
     }
