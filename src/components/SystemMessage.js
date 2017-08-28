@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { subscribeToMind } from '../api';
 
-
 const Container = styled.div`
     background: red;
     border-radius: 10px;
@@ -20,19 +19,25 @@ class SystemMessage extends Component {
     constructor() {
         super();
         this.state = {
-            message: "No Message"
+            signal: 0
         }
       }
 
     componentWillMount() {
-        subscribeToMind((cb) => this.setState({
-            message: cb
-        }));
-    }  
+        subscribeToMind((err, data) => 
+                this.setState({signal: data})
+        );        
+    }
+    
     render() {
+        console.log(this.state.signal);
         return (
             <Container>
-                <Text>{this.state.message}</Text>
+                {(this.state.signal === 200) ?
+                        <Text>Your BrainSensor doesn't have a good connection</Text>
+                   :
+                        <Text>Your BrainSensor is ready!</Text>
+                }    
             </Container>
         )
     }

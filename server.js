@@ -3,6 +3,7 @@ const nodeThinkGear = require('node-thinkgear-sockets');
 const tgClient = nodeThinkGear.createClient({
     enableRawOutput: true
 });
+tgClient.connect();
 
 io.on('connection', (client) => {
 
@@ -13,7 +14,6 @@ io.on('connection', (client) => {
 
 });
 
-
-  const port = 9090;
-  io.listen(port);
-  console.log('listening on port ', port);
+const port = 9090;
+io.listen(port);
+console.log('listening on port ', port);
