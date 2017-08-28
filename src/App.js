@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
 
 import SystemMessage from './components/SystemMessage'
 import MainTitle from './components/MainTitle'
 import Player from './components/Player'
+
+const MainContainer = styled.div`
+  text-align: center;
+`
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <MainContainer>
         <SystemMessage />
         <MainTitle />
         <Player />
-      </div>
+      </MainContainer>
     );
   }
 }
