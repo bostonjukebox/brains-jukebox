@@ -11,6 +11,7 @@ class App extends Component {
       <div className="App">
         <SystemMessage />
         <MainTitle />
+        <Player />
       </div>
     );
   }
