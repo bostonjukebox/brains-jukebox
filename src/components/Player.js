@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import Pizzicato from 'pizzicato'
 
 import { subscribeToMind } from '../api';
 
@@ -10,11 +11,14 @@ const Container = styled.div`
     height: 200px;
 `
 
+const sound1 = Pizzicato.Sound('../audio/girlfriend-futureteens.mp3', function(){
+});
+
 class Player extends Component {
     constructor(){
         super();
         this.state = {
-            attention: 0
+            attention: null
         }
     }
 
