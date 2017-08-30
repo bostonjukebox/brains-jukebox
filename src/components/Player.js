@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import Pizzicato from 'pizzicato'
 
-import { subscribeToMind } from '../api';
 
 const Container = styled.div`
     background-color: green;
@@ -11,8 +9,6 @@ const Container = styled.div`
     height: 200px;
 `
 
-const sound1 = Pizzicato.Sound('../audio/girlfriend-futureteens.mp3', function(){
-});
 
 class Player extends Component {
     constructor(){
@@ -23,9 +19,9 @@ class Player extends Component {
     }
 
     componentWillMount() {
-        subscribeToMind((err, data) =>
-            this.setState({attention: data.eSense.attention})
-        );
+        // subscribeToMind((err, data) =>
+        //     this.setState({attention: data.eSense.attention})
+        // );
     }
 
     render(){

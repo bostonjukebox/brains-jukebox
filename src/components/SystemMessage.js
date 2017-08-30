@@ -33,7 +33,7 @@ class SystemMessage extends Component {
         console.log(this.state.signal);
         return (
             <Container>
-                {(this.state.signal === 200 || this.state.signal === null) ?
+                {(this.state.signal === 200 || this.state.signal === null || this.state.signal === -1) ?
                         <Text>Your BrainSensor doesn't have a good connection</Text>
                    :
                         <Text>Your BrainSensor is ready!</Text>
