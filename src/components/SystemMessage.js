@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import socketIoClient from 'socket.io-client'
 
 const Container = styled.div`
     background: red;
