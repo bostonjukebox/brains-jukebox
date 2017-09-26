@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
-import { subscribeToMind } from '../api';
+import socketIoClient from 'socket.io-client'
 
 const Container = styled.div`
     background: red;
@@ -16,24 +15,11 @@ const Text = styled.p`
     color: #fff;
 `
 class SystemMessage extends Component {
-    constructor() {
-        super();
-        this.state = {
-            signal: null
-        }
-      }
-
-    componentWillMount() {
-        subscribeToMind((err, data) => 
-                this.setState({signal: data.poorSignalLevel})
-        );        
-    }
-    
     render() {
-        console.log(this.state.signal);
+        console.log(this.props.signal);
         return (
             <Container>
-                {(this.state.signal === 200 || this.state.signal === null || this.state.signal === -1) ?
+                {(this.props.signal === 200 || this.props.signal === null || this.props.signal === -1) ?
                         <Text>Your BrainSensor doesn't have a good connection</Text>
                    :
                         <Text>Your BrainSensor is ready!</Text>
