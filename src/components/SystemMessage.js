@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.div`
     background: red;
@@ -26,6 +27,10 @@ class SystemMessage extends Component {
             </Container>
         )
     }
+}
+
+SystemMessage.propTypes = {
+    signal: PropTypes.number
 }
 
 export default SystemMessage;

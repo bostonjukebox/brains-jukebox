@@ -8,9 +8,13 @@ tgClient.connect();
 io.on('connection', (client) => {
 
   tgClient.on('data', function(data){
-    client.emit('mindEvent', data);
-    console.log(data);
+
+    client.emit('signalRate', data.poorSignalLevel);
+    client.emit('attentionRate', data.eSense.attention);
+    console.log(data.poorSignalLevel);
+    console.log(data.eSense.attention);
   });
+
 
 });
 

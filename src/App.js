@@ -8,6 +8,7 @@ import Player from './components/Player'
 
 const MainContainer = styled.div`
   text-align: center;
+  background-color: black;
 `
 
 class App extends Component {
@@ -21,14 +22,16 @@ class App extends Component {
 
   componentWillMount() {
     this.socket = socketIoClient("http://localhost:9090");
-    this.socket.on("mindEvent", (data) => {
+    this.socket.on("attentionRate", (attentionLevel) => {
         this.setState({
-            attention: data.eSense.attention
+            attention: attentionLevel
         });
-        this.setState({
-            signal: data.poorSignalLevel
-        })
     });
+    this.socket.on("signalRate", (signalLevel) =>{
+        this.setState({
+            signal: signalLevel
+        })
+    })
   }
 
   render() {
