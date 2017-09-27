@@ -5,10 +5,10 @@ const Container = styled.div`
     background: transparent;
 `
 const Title = styled.h1`
-    color: #000;
+    color: inherit;
 `
 const SubTitle = styled.h2`
-    color: #000;
+    color: inherit;
 `
 
 class MainTitle extends Component {

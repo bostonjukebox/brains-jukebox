@@ -7,12 +7,16 @@ tgClient.connect();
 
 io.on('connection', (client) => {
 
-  tgClient.on('data', function(data){
+  tgClient.on('data', function(data) {
+    let signal = data.poorSignalLevel;
+    let attention = data.eSense.attention;
 
-    client.emit('signalRate', data.poorSignalLevel);
-    client.emit('attentionRate', data.eSense.attention);
-    console.log(data.poorSignalLevel);
-    console.log(data.eSense.attention);
+    client.emit('signalRate', signal);
+    client.emit('attentionRate', attention);
+    
+    
+    console.log(signal);
+    console.log(attention);
   });
 
 

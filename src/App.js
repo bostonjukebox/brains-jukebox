@@ -6,17 +6,32 @@ import SystemMessage from './components/SystemMessage'
 import MainTitle from './components/MainTitle'
 import Player from './components/Player'
 
+
 const MainContainer = styled.div`
   text-align: center;
-  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: ${props => props.theme.background};
+  color: ${props => props.theme.color};
 `
+
+const relaxTheme = {
+  background: 'black',
+  color: 'blue',
+}
+const defaultTheme = {
+  background: 'white',
+  color: 'black',
+}
 
 class App extends Component {
   constructor(){
       super();
       this.state = {
           attention: null,
-          signal: null
+          signal: null,
+          theme: defaultTheme,
       }
   }
 
@@ -36,7 +51,7 @@ class App extends Component {
 
   render() {
     return (
-      <MainContainer>
+      <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />
         <MainTitle />
         <Player attention={this.state.attention} />

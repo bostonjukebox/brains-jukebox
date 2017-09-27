@@ -12,7 +12,6 @@ const Container = styled.div`
 
 class Player extends Component {
     render(){
-        console.log(this.props.attention);
         return(
             <Container>
                 This is the player
