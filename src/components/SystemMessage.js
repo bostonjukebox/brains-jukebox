@@ -3,31 +3,27 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Container = styled.div`
-    background: red;
+    background: #19B5FE;
     border-radius: 10px;
     width: 60%;
     margin: 8em auto 0 auto;
-    padding: .31em;
-    text-align: left;
+    padding: .6em;
 `
 const Text = styled.p`
-    font-size: .8rem;
+    font-size: .9rem;
+    font-weight: 400;
     color: #fff;
+    text-align: left;
+    transition: all 3s linear;
 `
-class SystemMessage extends Component {
-    render() {
-        console.log(this.props.signal);
-        return (
+const SystemMessage = ({signal}) =>
             <Container>
-                {(this.props.signal === 200 || this.props.signal === null || this.props.signal === -1) ?
+                {(signal === 200 || signal === null || signal === -1) ?
                         <Text>Your BrainSensor doesn't have a good connection</Text>
                    :
                         <Text>Your BrainSensor is ready!</Text>
                 }    
             </Container>
-        )
-    }
-}
 
 SystemMessage.propTypes = {
     signal: PropTypes.number

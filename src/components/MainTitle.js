@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -11,15 +11,10 @@ const SubTitle = styled.h2`
     color: inherit;
 `
 
-class MainTitle extends Component {
-    render() {
-        return(
-            <Container>
-                <Title>Boston Jukebox</Title>
-                <SubTitle>Touch and listen to music</SubTitle>
-            </Container>
-        )
-    }
-}
+const MainTitle = () =>
+    <Container>
+        <Title>Boston Touch Jukebox</Title>
+        <SubTitle>Touch and listen to music</SubTitle>
+    </Container>
 
 export default MainTitle
