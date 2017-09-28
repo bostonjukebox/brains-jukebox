@@ -1,6 +1,6 @@
 # Boston Touch Jukebox
 
-[url=https://ibb.co/cthnM5][img]https://preview.ibb.co/nQQk8k/screen.png[/img][/url]
+![Alt text](https://preview.ibb.co/nQQk8k/screen.png " ")
 
 Project that lets people listen to music based on their mood (brain sensor reading)
 
