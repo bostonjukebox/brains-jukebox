@@ -1,9 +1,14 @@
 # Boston Touch Jukebox
 
-![Alt text](https://preview.ibb.co/nQQk8k/screen.png " ")
-
 Project that lets people listen to music based on their mood (brain sensor reading)
 
+## Motivation
+
+The Boston Touch Jukebox uses the concept of "media as a software" (Lev Manovich, 2012) to expand the sensorial scope of music. It aims to provide a complete and new experience to music listeners. They will not only listen to music but also feel and touch music.
+
+The project merges IoT and Web Development to expand the sensorial scope. Headband sensors are used to capture the user's mood, and touch sensors attached to objects give users the opportunity to choose music based on touch.
+
+![Alt text](https://preview.ibb.co/nQQk8k/screen.png " ")
 ## Getting Started
 
 First
