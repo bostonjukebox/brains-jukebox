@@ -4,11 +4,14 @@ import PropTypes from 'prop-types'
 
 import FlipCard from 'react-flipcard'
 
+import data from '../data/songs.json'
 
 class Player extends Component {
     constructor() {
         super();
         this.state = {
+            songs: {},
+            numberOfSongs: 0,
             flipped: false
         }
     }
@@ -17,13 +20,21 @@ class Player extends Component {
         this.setState({
           flipped: true
         });
-      }
+    }
     
-      showFront() {
+    showFront() {
         this.setState({
           flipped: false
         });
-      }
+    }
+
+    componentDidMount() {
+        const that = this;
+            that.setState ({
+                songs: data,
+                numberOfSongs: data.songs.length
+            })
+    }
     
 
     render(){
@@ -33,8 +44,8 @@ class Player extends Component {
                 flipped={this.state.flipped}
                 >
                 <section>
-                    <div>Front</div>
-                    <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>                    
+                    <div>{this.state.numberOfSongs}</div>
+                    <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
                 </section>
                 <section>
                     <div>Back</div>

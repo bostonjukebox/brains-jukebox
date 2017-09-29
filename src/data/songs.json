@@ -1,0 +1,16 @@
+{
+    "songs": [
+        {
+            "title": "My Way",
+            "autor": "Marty Kings",
+            "img": "img/image1.jpg",
+            "path": "audio/song1.mp3" 
+        },
+        {
+            "title": "Comes and Goes",
+            "autor": "Covey",
+            "img": "img/image2.jpg",
+            "path": "audio/song2.mp3" 
+        }
+    ]
+}

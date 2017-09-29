@@ -14,15 +14,18 @@ const MainContainer = styled.div`
   overflow: hidden;
   background: ${props => props.theme.background};
   color: ${props => props.theme.color};
+  transition: ${props => props.theme.transition};
 `
 
 const relaxedTheme = {
   background: '#ADD8E6',
   color: '#000',
+  transition: 'all 3s linear',
 }
 const defaultTheme = {
   background: '#F44336',
   color: '#FFF',
+  transition: 'all 3s linear',
 }
 
 class App extends Component {
@@ -41,8 +44,10 @@ class App extends Component {
         this.setState({
             attention: attentionLevel
         });
-        if(this.state.attention > 70) {
+        if(this.state.attention > 50) {
             this.setState({theme: relaxedTheme})
+        } else {
+            this.setState({theme: defaultTheme})
         }
     });
     this.socket.on("signalRate", (signalLevel) =>{
