@@ -16,13 +16,13 @@ const MainContainer = styled.div`
   color: ${props => props.theme.color};
 `
 
-const relaxTheme = {
-  background: 'black',
-  color: 'blue',
+const relaxedTheme = {
+  background: '#ADD8E6',
+  color: '#000',
 }
 const defaultTheme = {
-  background: 'white',
-  color: 'black',
+  background: '#F44336',
+  color: '#FFF',
 }
 
 class App extends Component {
@@ -41,6 +41,9 @@ class App extends Component {
         this.setState({
             attention: attentionLevel
         });
+        if(this.state.attention > 70) {
+            this.setState({theme: relaxedTheme})
+        }
     });
     this.socket.on("signalRate", (signalLevel) =>{
         this.setState({
@@ -48,8 +51,10 @@ class App extends Component {
         })
     })
   }
-
+  
   render() {
+    console.log(this.state.theme)
+    console.log(this.state.attention)
     return (
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />

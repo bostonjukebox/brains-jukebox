@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Container = styled.div`
-    background: #19B5FE;
+    background-color: #D32F2F;
     border-radius: 10px;
     width: 60%;
     margin: 8em auto 0 auto;
