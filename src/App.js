@@ -64,7 +64,7 @@ class App extends Component {
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />
         <MainTitle />
-        <Player attention={this.state.attention} />
+        <Player />
       </MainContainer>
     );
   }

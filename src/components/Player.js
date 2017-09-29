@@ -10,8 +10,9 @@ class Player extends Component {
     constructor() {
         super();
         this.state = {
-            songs: {},
+            player: {},
             numberOfSongs: 0,
+            index: 1,
             flipped: false
         }
     }
@@ -31,13 +32,15 @@ class Player extends Component {
     componentDidMount() {
         const that = this;
             that.setState ({
-                songs: data,
+                player: data,
                 numberOfSongs: data.songs.length
             })
     }
     
 
     render(){
+        const { player } = this.state
+        console.log(this.state.index)
         return(
             <FlipCard
                 disabled={true}
@@ -45,6 +48,7 @@ class Player extends Component {
                 >
                 <section>
                     <div>{this.state.numberOfSongs}</div>
+                    <div>{this.state.player[this.state.index]}</div>
                     <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
                 </section>
                 <section>
