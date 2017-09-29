@@ -2,14 +2,8 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import FlipPlayer from './FlipPlayer'
+import FlipCard from 'react-flipcard'
 
-const Container = styled.div`
-    background-color: green;
-    width: 60%;
-    margin: 0 auto;
-    height: 200px;
-`
 
 class Player extends Component {
     constructor() {
@@ -19,19 +13,35 @@ class Player extends Component {
         }
     }
 
-    handleClick() {
+    showBack() {
         this.setState({
-            flipped: !this.state.flipped
-        })
-    }
+          flipped: true
+        });
+      }
+    
+      showFront() {
+        this.setState({
+          flipped: false
+        });
+      }
+    
 
     render(){
-        console.log(this.state.flipped)
         return(
-            <Container>
-                <FlipPlayer flippped={this.state.flipped} />
-                <button onClick={() => this.handleClick()}>Change to multiple track</button> 
-            </Container>
+            <FlipCard
+                disabled={true}
+                flipped={this.state.flipped}
+                >
+                <section>
+                    <div>Front</div>
+                    <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>                    
+                </section>
+                <section>
+                    <div>Back</div>
+                    <button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</button>
+                </section>
+            </FlipCard>
+         
         )
     }
 }
