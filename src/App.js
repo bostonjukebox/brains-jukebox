@@ -20,12 +20,12 @@ const MainContainer = styled.div`
 const relaxedTheme = {
   background: '#ADD8E6',
   color: '#000',
-  transition: 'all 3s linear',
+  transition: 'background 3s linear, color 3s linear',
 }
 const defaultTheme = {
   background: '#F44336',
   color: '#FFF',
-  transition: 'all 3s linear',
+  transition: 'background 3s linear, color 3s linear',
 }
 
 class App extends Component {
