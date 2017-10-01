@@ -4,16 +4,21 @@ import PropTypes from 'prop-types'
 
 import FlipCard from 'react-flipcard'
 
+import SongInfo from './SongInfo'
+import SongImage from './SongImage'
+import MultiTrack from './MultiTrack'
+
 import data from '../data/songs.json'
 
 class Player extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
-            player: {},
             numberOfSongs: 0,
-            index: 1,
-            flipped: false
+            index: 0,
+            songs: {},
+            flipped: false,
+            playing: true,
         }
     }
 
@@ -29,30 +34,35 @@ class Player extends Component {
         });
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const that = this;
             that.setState ({
-                player: data,
+                songs: data.songs,
                 numberOfSongs: data.songs.length
             })
     }
     
 
     render(){
-        const { player } = this.state
-        console.log(this.state.index)
+        const { songs, index } = this.state
+        console.log(songs[index]);
         return(
             <FlipCard
                 disabled={true}
                 flipped={this.state.flipped}
                 >
                 <section>
-                    <div>{this.state.numberOfSongs}</div>
-                    <div>{this.state.player[this.state.index]}</div>
+                    {(index === null) ?
+                        <div>No song playing :-(</div> :
+                        <SongInfo
+                                song={songs[index]}
+                        />                    
+                    }
+                    <SongImage song={songs[index]} />
                     <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
                 </section>
                 <section>
-                    <div>Back</div>
+                    <MultiTrack />
                     <button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</button>
                 </section>
             </FlipCard>
@@ -61,9 +71,5 @@ class Player extends Component {
     }
 }
 
-
-Player.propTypes = {
-    attention: PropTypes.number
-}
 
 export default Player

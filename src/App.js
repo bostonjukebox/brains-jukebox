@@ -50,7 +50,7 @@ class App extends Component {
             this.setState({theme: defaultTheme})
         }
     });
-    this.socket.on("signalRate", (signalLevel) =>{
+    this.socket.on("signalRate", (signalLevel) => {
         this.setState({
             signal: signalLevel
         })
@@ -58,8 +58,6 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state.theme)
-    console.log(this.state.attention)
     return (
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />
