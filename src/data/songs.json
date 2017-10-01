@@ -2,13 +2,13 @@
 	"songs": [{
 			"title": "My Way",
 			"author": "Marty Kings",
-			"img": "img/image1.jpg",
+			"img": "../img/image2.jpg",
 			"path": "audio/song1.mp3"
 		},
 		{
 			"title": "Comes and Goes",
 			"author": "Covey",
-			"img": "img/image2.jpg",
+			"img": "../img/image3.jpg",
 			"path": "audio/song2.mp3"
 		}
 	]

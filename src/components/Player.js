@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
 import FlipCard from 'react-flipcard'
 
@@ -18,7 +17,6 @@ class Player extends Component {
             index: 0,
             songs: {},
             flipped: false,
-            playing: true,
         }
     }
 
@@ -70,6 +68,5 @@ class Player extends Component {
         )
     }
 }
-
 
 export default Player

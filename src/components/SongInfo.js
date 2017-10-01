@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SongInfo = ({song}) => 
     <section>
@@ -7,3 +8,7 @@ const SongInfo = ({song}) =>
     </section>
 
 export default SongInfo
+
+SongInfo.propTypes = {
+  song: PropTypes.object.isRequired,
+}
