@@ -6,6 +6,7 @@ import SystemMessage from './components/SystemMessage'
 import MainTitle from './components/MainTitle'
 import Player from './components/Player'
 import Vinyl from './components/Vinyl'
+import Menu from './components/Menu'
 
 const MainContainer = styled.div`
   text-align: center;
@@ -65,6 +66,7 @@ class App extends Component {
         <MainTitle />
         <Player playing={this.state.playing} />
         <Vinyl playing={this.state.playing} />
+        <Menu />
       </MainContainer>
     );
   }
