@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import marty from '../img/image2.jpg'
-import covey from '../img/image3.jpg'
 
 class SongImage extends Component {
     render(){
@@ -18,8 +16,7 @@ class SongImage extends Component {
 }
 
 SongImage.propTypes = {
-    song: PropTypes.object.isRequired,
-    source: PropTypes.string.isRequired
+    song: PropTypes.object.isRequired
 }    
 
 export default SongImage

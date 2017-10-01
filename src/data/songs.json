@@ -3,13 +3,13 @@
 			"title": "My Way",
 			"author": "Marty Kings",
 			"img": "image2.jpg",
-			"path": "audio/song1.mp3"
+			"path": "myway-martykings.mp3"
 		},
 		{
 			"title": "Comes and Goes",
 			"author": "Covey",
 			"img": "image3.jpg",
-			"path": "audio/song2.mp3"
+			"path": "comesandgoes-covey.mp3"
 		}
 	]
 }

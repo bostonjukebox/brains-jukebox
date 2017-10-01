@@ -2,6 +2,8 @@
 
 Project that lets people listen to music based on their mood (brain sensor reading)
 
+Made with ReactJS, Arduino, NodeJS
+
 ## Motivation
 
 The Boston Touch Jukebox uses the concept of "media as a software" (Lev Manovich, 2012) to expand the sensorial scope of music. It aims to provide a complete and new experience to music listeners. They will not only listen to music but also feel and touch music.

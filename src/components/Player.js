@@ -8,6 +8,7 @@ import FlipCard from 'react-flipcard'
 import SongInfo from './SongInfo'
 import SongImage from './SongImage'
 import MultiTrack from './MultiTrack'
+import Music from './Music'
 
 import data from '../data/songs.json'
 
@@ -19,6 +20,8 @@ class Player extends Component {
             index: 0,
             songs: {},
             flipped: false,
+            playing: false,
+            volume: 1.0,
         }
     }
 
@@ -44,7 +47,7 @@ class Player extends Component {
     
 
     render(){
-        const { songs, index } = this.state
+        const { songs, index, volume } = this.state
         const { playing } = this.props
 
         console.log(songs[index]);
@@ -62,6 +65,7 @@ class Player extends Component {
                         />                    
                     }
                     <SongImage song={songs[index]} />
+                    <Music song={songs[index]} volume={volume} />
                     <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
                 </section>
                 <section>
