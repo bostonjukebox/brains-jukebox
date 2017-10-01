@@ -6,6 +6,20 @@ import styled from 'styled-components'
 import Modal from './Modal'
 import ModalForm from './ModalForm'
 
+const Container = styled.section`
+    width: 100%;
+    height: 100%;
+`
+const Navigation = styled.nav`
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+`
+
 const Item = styled.li`
     list-style: none;
 `
@@ -42,22 +56,21 @@ class Menu extends Component {
     componentDidMount() {
         document.addEventListener('keyup', (event) => {
             if(event.keyCode === 27) {
-                this.setState({dropdown: false})
-                this.setState({showModal: false})
-                this.setState({showConfirmation: false})
-                this.setState({showError: false})
+                this.setState({showModalCredits: false})
+                this.setState({showModalSuggestion: false})
+                this.setState({showModalWorks: false})
             }
         })
     }
 
     render() {
         return(
-        <section>
-            <nav>
+        <Container>
+            <Navigation>
                 <Item><button onClick={() => this.toggleModalSuggestion()}>suggest a Song</button></Item>
                 <Item><button onClick={() => this.toggleModalWorks()}>how it works</button></Item>
                 <Item><button onClick={() => this.toggleModalCredits()}>credits</button></Item>
-            </nav>
+            </Navigation>
             {(this.state.showModalCredits) ?
                 <Modal title={'Credits'} text={'this is the credits modal'} />
                 : ''   
@@ -70,7 +83,7 @@ class Menu extends Component {
                 <ModalForm title={'Suggest a song'} />
                 : ''
             }
-        </section>
+        </Container>
         )
     }
 
