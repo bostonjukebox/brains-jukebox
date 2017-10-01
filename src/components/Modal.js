@@ -4,11 +4,12 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Container = styled.section`
-    position: absolute,
-    top: 0,
-    left: 0,
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     background: rgba(0, 0, 0, 0.3);    
 `
 
