@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+
 import styled from 'styled-components'
 
 import FlipCard from 'react-flipcard'
@@ -17,7 +19,6 @@ class Player extends Component {
             index: 0,
             songs: {},
             flipped: false,
-            playing: false,
         }
     }
 
@@ -43,8 +44,11 @@ class Player extends Component {
     
 
     render(){
-        const { songs, index, playing } = this.state
+        const { songs, index } = this.state
+        const { playing } = this.props
+
         console.log(songs[index]);
+
         return(
             <FlipCard
                 disabled={true}
@@ -68,6 +72,10 @@ class Player extends Component {
          
         )
     }
+}
+
+Player.propTypes = {
+    playing: PropTypes.bool
 }
 
 export default Player
