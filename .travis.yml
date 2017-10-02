@@ -3,8 +3,3 @@ node_js:
   - 7
   - 6
   - 4
-install:
-  - npm install
-
-script:
-  - npm run build
