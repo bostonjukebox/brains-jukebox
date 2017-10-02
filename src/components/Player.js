@@ -20,7 +20,6 @@ class Player extends Component {
             index: 0,
             songs: {},
             flipped: false,
-            playing: false,
             volume: 1.0,
         }
     }
