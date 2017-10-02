@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import socketIoClient from 'socket.io-client'
 
 import styled from 'styled-components'
 
@@ -42,6 +43,13 @@ class Player extends Component {
                 songs: data.songs,
                 numberOfSongs: data.songs.length
             })
+        that.socket = socketIoClient("http://localhost:9091");
+        that.socket.on("objectTouched", (object) => {
+            const index = object.toString();
+            that.setState({
+                index: index
+            })
+        })
     }
     
 
@@ -49,8 +57,7 @@ class Player extends Component {
         const { songs, index, volume } = this.state
         const { playing } = this.props
 
-        console.log(songs[index]);
-
+        console.log(this.state.index);
         return(
             <FlipCard
                 disabled={true}
