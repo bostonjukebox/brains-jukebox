@@ -10,6 +10,7 @@ import SongInfo from './SongInfo'
 import SongImage from './SongImage'
 import MultiTrack from './MultiTrack'
 import Music from './Music'
+import Vinyl from './Vinyl'
 
 import data from '../data/songs.json'
 
@@ -22,6 +23,7 @@ class Player extends Component {
             songs: {},
             flipped: false,
             volume: 1.0,
+            playing: false,
         }
     }
 
@@ -47,18 +49,20 @@ class Player extends Component {
         that.socket.on("objectTouched", (object) => {
             const index = object.toString();
             that.setState({
-                index: index
+                index: index,
+                playing: true
             })
         })
     }
     
 
     render(){
-        const { songs, index, volume } = this.state
-        const { playing } = this.props
+        const { songs, index, volume, playing } = this.state
+
 
         console.log(this.state.index);
         return(
+            <section>
             <FlipCard
                 disabled={true}
                 flipped={this.state.flipped}
@@ -79,7 +83,8 @@ class Player extends Component {
                     <button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</button>
                 </section>
             </FlipCard>
-         
+            <Vinyl playing={playing} />
+            </section>
         )
     }
 }

@@ -5,7 +5,6 @@ import socketIoClient from 'socket.io-client'
 import SystemMessage from './components/SystemMessage'
 import MainTitle from './components/MainTitle'
 import Player from './components/Player'
-import Vinyl from './components/Vinyl'
 import Menu from './components/Menu'
 
 const MainContainer = styled.div`
@@ -36,7 +35,6 @@ class App extends Component {
           attention: null,
           signal: null,
           theme: defaultTheme,
-          playing: false,
       }
   }
 
@@ -64,8 +62,7 @@ class App extends Component {
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />
         <MainTitle />
-        <Player playing={this.state.playing} />
-        <Vinyl playing={this.state.playing} />
+        <Player />
         <Menu />
       </MainContainer>
     );
