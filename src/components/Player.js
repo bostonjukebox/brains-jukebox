@@ -14,6 +14,11 @@ import Vinyl from './Vinyl'
 
 import data from '../data/songs.json'
 
+const Content = styled.section`
+    padding: 1em;
+    position: relative;
+`
+
 class Player extends Component {
     constructor() {
         super()
@@ -67,7 +72,7 @@ class Player extends Component {
                 disabled={true}
                 flipped={this.state.flipped}
                 >
-                <section>
+                <Content>
                     {(index === null) ?
                         <div>No song playing :-(</div> :
                         <SongInfo
@@ -77,7 +82,7 @@ class Player extends Component {
                     <SongImage song={songs[index]} />
                     <Music song={songs[index]} volume={volume} />
                     <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
-                </section>
+                </Content>
                 <section>
                     <MultiTrack playing={playing} />
                     <button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</button>

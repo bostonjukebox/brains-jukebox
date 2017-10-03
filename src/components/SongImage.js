@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import styled from 'styled-components'
+
+const Image = styled.img`
+    border-radius: 10px;
+`
+
+const Container = styled.section`
+    position: absolute;
+    top: -6%;
+    right: 3%;
+`
 
 class SongImage extends Component {
     render(){
@@ -8,9 +19,9 @@ class SongImage extends Component {
         const source = require(`../img/${song.img}`);
 
         return (
-        <section>
-            <img src={source} alt={`${song.title} from ${song.author}`} />
-        </section>
+        <Container>
+            <Image src={source} alt={`${song.title} from ${song.author}`} />
+        </Container>
         )
     }
 }
