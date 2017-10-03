@@ -10,6 +10,60 @@
 			"author": "Covey",
 			"img": "image3.jpg",
 			"path": "comesandgoes-covey.mp3"
+		},
+		{
+			"title": "Girlfriend on a gap year",
+			"author": "Future Teens",
+			"img": "image4.jpg",
+			"path": "girlfriend-futureteens.mp3"
+		},
+		{
+			"title": "Work",
+			"author": "Viva La Hop",
+			"img": "image5.jpg",
+			"path": "work-vivalahop.mp3"
+		},
+		{
+			"title": "White Horse",
+			"author": "Darling Side",
+			"img": "image6.jpg",
+			"path": "whitehorses-darlingside.mp3"
+		},
+		{
+			"title": "Protector",
+			"author": "Waldo the Band",
+			"img": "image7.jpg",
+			"path": "protector-waldo.mp3"
+		},
+		{
+			"title": "Taking Chances",
+			"author": "Kristina Stapelfeld",
+			"img": "image8.jpg",
+			"path": "takingchances-kristinastapelfeld.mp3"
+		},
+		{
+			"title": "Days are dreaming",
+			"author": "Goldbloc",
+			"img": "image9.jpg",
+			"path": "daysaredreaming-goldbloc.mp3"
+		},
+		{
+			"title": "Vocal",
+			"author": "",
+			"img": "",
+			"path": "vocals.mp3"
+		},
+		{
+			"title": "Guitar",
+			"author": "",
+			"img": "",
+			"path": "guitar.mp3"
+		},
+		{
+			"title": "Drums",
+			"author": "",
+			"img": "",
+			"path": "drums.mp3"
 		}
 	]
 }
