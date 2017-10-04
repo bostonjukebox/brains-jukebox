@@ -37,10 +37,10 @@ const Track = ({name, icon, playing}) =>
         
     </Container>
 
-    Track.propTypes = {
-        name: PropTypes.string,
-        icon: PropTypes.string,
-        playing: PropTypes.bool,
-    }
+Track.propTypes = {
+    name: PropTypes.string,
+    icon: PropTypes.string,
+    playing: PropTypes.bool,
+}
 
 export default Track

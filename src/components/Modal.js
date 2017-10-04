@@ -19,7 +19,7 @@ const Content = styled.section`
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
-    height: 15em;
+    min-height: 15em;
     background-color: #fff;
     color: #000;
     padding: 0 1em;
@@ -34,6 +34,7 @@ const Text = styled.p`
     font-size: 1rem;
     line-height: 1.5;
     text-align: left;
+    white-space: pre-wrap;
 `
 
 const Modal = ({title, text}) =>
