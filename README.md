@@ -13,6 +13,8 @@ The project merges IoT and Web Development to expand the sensorial scope. Headba
 ![Alt text](https://preview.ibb.co/nQQk8k/screen.png " ")
 ## Getting Started
 
+**You need a brain sensor headband [Neurosky](http://neurosky.com/) and an Arduino connect to an [Adafruit 12 X Capactive Touch Shield MPR121(https://www.adafruit.com/product/2024)**
+
 First
 
 `npm install` or  `yarn install`
