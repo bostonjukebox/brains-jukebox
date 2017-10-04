@@ -17,6 +17,18 @@ import data from '../data/songs.json'
 const Content = styled.section`
     padding: 1em;
     position: relative;
+    margin-top: -1em;
+`
+const Button = styled.button`
+    appearance: none;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: .8rem;
+    padding: .31em .62em;
+    margin-top: 2.2em;
+    cursor: pointer;
 `
 
 class Player extends Component {
@@ -81,12 +93,12 @@ class Player extends Component {
                     }
                     <SongImage song={songs[index]} />
                     <Music song={songs[index]} volume={volume} />
-                    <button type="button" onClick={() => this.showBack()}>Go to multitrack mode</button>     
+                    <Button type="button" onClick={() => this.showBack()}>Go to multitrack mode</Button>     
                 </Content>
-                <section>
+                <Content>
                     <MultiTrack playing={playing} />
-                    <button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</button>
-                </section>
+                    <Button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</Button>
+                </Content>
             </FlipCard>
             <Vinyl playing={playing} />
             </section>

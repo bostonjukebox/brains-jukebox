@@ -4,6 +4,10 @@ import styled, { keyframes } from 'styled-components'
 
 import source from '../img/vinyl.png'
 
+const Container = styled.section`
+    margin-top: 2em;
+`
+
 const spin = keyframes`
     from {
         transform: rotate(0deg);
@@ -24,13 +28,13 @@ const IconAnimated = Icon.extend`
 `
 
 const Vinyl = ({playing}) =>
-    <section>
+    <Container>
     {(playing) ?
         <IconAnimated src={source} alt="Vinyl" />
         : 
         <Icon src={source} alt="Vinyl" />
     }
-    </section>
+    </Container>
 
 Vinyl.propTypes = {
     playing: PropTypes.bool

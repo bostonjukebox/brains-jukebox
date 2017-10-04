@@ -6,11 +6,10 @@ import styled from 'styled-components'
 const Image = styled.img`
     border-radius: 10px;
 `
-
 const Container = styled.section`
     position: absolute;
-    top: -6%;
-    right: 3%;
+    top: 5px;
+    right: 15px;
 `
 
 class SongImage extends Component {
