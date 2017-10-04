@@ -8,6 +8,7 @@ import Player from './components/Player'
 import Menu from './components/Menu'
 
 const MainContainer = styled.div`
+  font-family: 'Montserrat', Verdana, sans-serif;
   text-align: center;
   height: 100vh;
   width: 100vw;

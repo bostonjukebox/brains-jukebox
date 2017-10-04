@@ -5,16 +5,20 @@ const Container = styled.div`
     background: transparent;
 `
 const Title = styled.h1`
+    font-size: 3.5rem;
+    font-weight: 800;
     color: inherit;
 `
 const SubTitle = styled.h2`
+    font-size: 1.5rem;
+    font-weight: 400;
     color: inherit;
 `
 
 const MainTitle = () =>
     <Container>
         <Title>Boston Touch Jukebox</Title>
-        <SubTitle>Touch and listen to music</SubTitle>
+        <SubTitle>Touch and listen to local music</SubTitle>
     </Container>
 
 export default MainTitle

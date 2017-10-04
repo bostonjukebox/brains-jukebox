@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import ReactHowler from 'react-howler'
 
 
@@ -16,6 +18,11 @@ class Music extends Component {
         />
         )
     }
+}
+
+Music.propTypes = {
+    song: PropTypes.object.isRequired,
+    volume: PropTypes.number,
 }
 
 export default Music

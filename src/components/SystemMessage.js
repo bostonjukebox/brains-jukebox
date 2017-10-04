@@ -6,7 +6,7 @@ const Container = styled.div`
     background-color: #D32F2F;
     border-radius: 10px;
     width: 60%;
-    margin: 8em auto 0 auto;
+    margin: 2em auto 0 auto;
     padding: .6em;
 `
 const Text = styled.p`
