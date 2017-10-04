@@ -12,7 +12,7 @@ const Navigation = styled.nav`
     position: absolute;
     bottom: 5%;
     right: 5%;
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -20,6 +20,20 @@ const Navigation = styled.nav`
 
 const Item = styled.li`
     list-style: none;
+`
+
+const Button = styled.button`
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #000;
+    }
 `
 
 class Menu extends Component {
@@ -65,9 +79,9 @@ class Menu extends Component {
         return(
         <Container>
             <Navigation>
-                <Item><button onClick={() => this.toggleModalSuggestion()}>suggest a Song</button></Item>
-                <Item><button onClick={() => this.toggleModalWorks()}>how it works</button></Item>
-                <Item><button onClick={() => this.toggleModalCredits()}>credits</button></Item>
+                <Item><Button onClick={() => this.toggleModalSuggestion()}>suggest a song</Button></Item>
+                <Item><Button onClick={() => this.toggleModalWorks()}>how it works</Button></Item>
+                <Item><Button onClick={() => this.toggleModalCredits()}>credits</Button></Item>
             </Navigation>
             {(this.state.showModalCredits) ?
                 <Modal title={'Credits'} text={'this is the credits modal'} />

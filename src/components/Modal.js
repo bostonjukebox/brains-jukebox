@@ -10,9 +10,8 @@ const Container = styled.section`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.3);    
+    background: rgba(0, 0, 0, 0.6);    
 `
-
 const Content = styled.section`
     position: absolute;
     z-index: 10;
@@ -23,14 +22,25 @@ const Content = styled.section`
     height: 15em;
     background-color: #fff;
     color: #000;
+    padding: 0 1em;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);     
+`
+const Title = styled.h1`
+    color: #F44336;
+    font-size: 1.2rem;
+`
+const Text = styled.p`
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
 `
 
 const Modal = ({title, text}) =>
     <Container>
         <Content>
-            <h1>{title}</h1>
-            <p>{text}</p>
+            <Title>{title}</Title>
+            <Text>{text}</Text>
         </Content>
     </Container>
 
