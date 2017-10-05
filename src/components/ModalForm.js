@@ -41,7 +41,7 @@ const TextArea = styled.textarea`
     font-size: 1rem;
 `
 
-const Button = styled.button`
+const ButtonForm = styled.button`
     appearance: none;
     background-color: #000;
     color: #fff;
@@ -51,18 +51,32 @@ const Button = styled.button`
     padding: .31em .62em;
     cursor: pointer;
 `
+const Button = styled.button`
+    appearance: none;
+    background-color: transparent;
+    color: #F44336;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    position: absolute;
+    top: .6em;
+    right: .6em;
+    cursor: pointer;
+`
 
-const ModalForm = ({title}) =>
+const ModalForm = ({title, handleModal}) =>
     <Container>
         <Content>
+            <Button onClick={handleModal}>close</Button>
             <Title>{title}</Title>
             <TextArea></TextArea>
-            <Button>Send</Button>
+            <ButtonForm>Send</ButtonForm>
         </Content>
     </Container>
 
 ModalForm.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    handleModal: PropTypes.func.isRequired
 }
 
 export default ModalForm

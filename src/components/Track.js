@@ -30,7 +30,7 @@ const Track = ({name, icon, playing}) =>
     <Container>
         <Icon src={icon} alt={`${name} - icon`}/> 
         {name}
-        {(playing === false) ?
+        {(playing) ?
             <Button>Stop</Button>
             : ''    
         }

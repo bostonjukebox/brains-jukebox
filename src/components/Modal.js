@@ -36,10 +36,22 @@ const Text = styled.p`
     text-align: left;
     white-space: pre-wrap;
 `
-
-const Modal = ({title, text}) =>
+const Button = styled.button`
+    appearance: none;
+    background-color: transparent;
+    color: #F44336;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    position: absolute;
+    top: .6em;
+    right: .6em;
+    cursor: pointer;
+`
+const Modal = ({title, text, handleModal}) =>
     <Container>
         <Content>
+            <Button onClick={handleModal}>close</Button>
             <Title>{title}</Title>
             <Text>{text}</Text>
         </Content>
@@ -47,7 +59,8 @@ const Modal = ({title, text}) =>
 
 Modal.propTypes = {
     title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    handleModal: PropTypes.func.isRequired
 }
 
 export default Modal
