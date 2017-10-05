@@ -10,7 +10,7 @@ const Container = styled.section`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.3);    
+    background: rgba(0, 0, 0, 0.6);    
 `
 
 const Content = styled.section`

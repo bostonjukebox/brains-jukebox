@@ -19,6 +19,10 @@ const Content = styled.section`
     position: relative;
     margin-top: -1em;
 `
+
+const Text = styled.p`
+    margin-top: 1em;
+`
 const Button = styled.button`
     appearance: none;
     background-color: #000;
@@ -38,7 +42,7 @@ class Player extends Component {
         super()
         this.state = {
             numberOfSongs: 0,
-            index: 0,
+            index: null,
             songs: {},
             flipped: false,
             volume: 1.0,
@@ -88,13 +92,19 @@ class Player extends Component {
                 >
                 <Content>
                     {(index === null) ?
-                        <div>No song playing :-(</div> :
-                        <SongInfo
+                        <Text>No song playing :-(</Text> 
+                        : <SongInfo
                                 song={songs[index]}
-                        />                    
+                          />                    
                     }
-                    <SongImage song={songs[index]} />
-                    <Music song={songs[index]} volume={volume} />
+                    {(index != null) ?
+                        <SongImage song={songs[index]} />
+                        : ''
+                    }
+                    {(index != null) ?
+                        <Music song={songs[index]} volume={volume} />
+                        : ''
+                    }
                     <Button type="button" onClick={() => this.showBack()}>Go to multitrack mode</Button>     
                 </Content>
                 <Content>

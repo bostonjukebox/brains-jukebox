@@ -16,9 +16,9 @@ class SongImage extends Component {
         const { song } = this.props;
         const source = require(`../img/${song.img}`);
 
-        return (
-        <Container>
-            <Image src={source} alt={`${song.title} from ${song.author}`} />
+        return (           
+        <Container>    
+            <Image src={source} alt={`${song.title} from ${song.author}`} /> 
         </Container>
         )
     }
