@@ -11,7 +11,6 @@ const Container = styled.section`
     top: 5px;
     right: 15px;
 `
-
 class SongImage extends Component {
     render(){
         const { song } = this.props;
