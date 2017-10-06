@@ -11,3 +11,15 @@ exports[`renders well 1`] = `
   />
 </section>
 `;
+
+exports[`renders without crashing 1`] = `
+<section
+  className="sc-bdVaJa brgSrh"
+>
+  <img
+    alt="Vinyl"
+    className="sc-bwzfXH cxTssG"
+    src="vinyl.png"
+  />
+</section>
+`;
