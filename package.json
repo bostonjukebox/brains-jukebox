@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.1.0",
     "johnny-five": "^0.11.6",
     "node-thinkgear-sockets": "^0.0.1",
     "react": "^15.6.1",
@@ -10,6 +11,7 @@
     "react-flipcard": "^0.2.1",
     "react-howler": "^3.6.3",
     "react-scripts": "1.0.11",
+    "react-test-renderer": "15.6.1",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3",
     "styled-components": "^2.1.2"
