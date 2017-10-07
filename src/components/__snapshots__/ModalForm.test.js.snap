@@ -11,13 +11,11 @@ ShallowWrapper {
   "node": <styled.section>
     <styled.section>
         <styled.button
-            onClick={true}
+            onClick={undefined}
         >
             close
         </styled.button>
-        <styled.h1>
-            Suggest a song
-        </styled.h1>
+        <styled.h1 />
         <styled.textarea />
         <styled.button>
             Send
@@ -28,13 +26,11 @@ ShallowWrapper {
     <styled.section>
       <styled.section>
             <styled.button
-                  onClick={true}
+                  onClick={undefined}
             >
                   close
             </styled.button>
-            <styled.h1>
-                  Suggest a song
-            </styled.h1>
+            <styled.h1 />
             <styled.textarea />
             <styled.button>
                   Send
@@ -48,20 +44,14 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <ModalForm
-        handleModal={true}
-        title="Suggest a song"
-/>,
+      "_currentElement": <ModalForm />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
-        "props": Object {
-          "handleModal": true,
-          "title": "Suggest a song",
-        },
+        "props": Object {},
         "refs": Object {},
         "state": null,
         "updater": Object {
@@ -85,13 +75,11 @@ ShallowWrapper {
         "_currentElement": <styled.section>
           <styled.section>
                     <styled.button
-                              onClick={true}
+                              onClick={undefined}
                     >
                               close
                     </styled.button>
-                    <styled.h1>
-                              Suggest a song
-                    </styled.h1>
+                    <styled.h1 />
                     <styled.textarea />
                     <styled.button>
                               Send
@@ -102,13 +90,11 @@ ShallowWrapper {
         "_renderedOutput": <styled.section>
           <styled.section>
                     <styled.button
-                              onClick={true}
+                              onClick={undefined}
                     >
                               close
                     </styled.button>
-                    <styled.h1>
-                              Suggest a song
-                    </styled.h1>
+                    <styled.h1 />
                     <styled.textarea />
                     <styled.button>
                               Send
@@ -126,9 +112,6 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <ModalForm
-    handleModal={true}
-    title="Suggest a song"
-/>,
+  "unrendered": <ModalForm />,
 }
 `;

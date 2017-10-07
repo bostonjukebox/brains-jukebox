@@ -207,7 +207,7 @@ ShallowWrapper {
                   "rejectUnauthorized": true,
                   "requestTimeout": undefined,
                   "supportsBinary": false,
-                  "uri": "http://localhost:9090/socket.io/?EIO=3&transport=polling&t=LxrRnK7&b64=1",
+                  "uri": "http://localhost:9090/socket.io/?EIO=3&transport=polling&t=LxtE8fK&b64=1",
                   "xd": true,
                   "xhr": XMLHttpRequest {
                     "DONE": 4,
@@ -241,7 +241,7 @@ ShallowWrapper {
                 "query": Object {
                   "EIO": 3,
                   "b64": 1,
-                  "t": "LxrRnK7",
+                  "t": "LxtE8fK",
                   "transport": "polling",
                 },
                 "readyState": "opening",
