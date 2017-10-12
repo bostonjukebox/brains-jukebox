@@ -48,6 +48,8 @@ class Player extends Component {
             volume: 1.0,
             playing: false,
         }
+        this.showBack = this.showBack.bind(this);
+        this.showFront = this.showFront.bind(this);
     }
 
     showBack() {
@@ -103,11 +105,11 @@ class Player extends Component {
                         <Music song={songs[index]} volume={volume} />
                         : ''
                     }
-                    <Button type="button" onClick={() => this.showBack()}>Go to multitrack mode</Button>     
+                    <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>     
                 </Content>
                 <Content>
                     <MultiTrack playing={playing} />
-                    <Button type="button" ref="backButton" onClick={() => this.showFront()}>Go to single track mode</Button>
+                    <Button type="button" ref="backButton" onClick={this.showFront}>Go to single track mode</Button>
                 </Content>
             </FlipCard>
             <Vinyl playing={playing} />
