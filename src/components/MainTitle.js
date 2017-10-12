@@ -16,9 +16,9 @@ const SubTitle = styled.h2`
 `
 
 const MainTitle = () =>
-    <Container>
-        <Title>Boston Touch Jukebox</Title>
-        <SubTitle>Touch and listen to local music</SubTitle>
-    </Container>
+  <Container>
+    <Title>Boston Touch Jukebox</Title>
+    <SubTitle>Touch and listen to local music</SubTitle>
+  </Container>
 
 export default MainTitle

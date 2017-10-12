@@ -86,6 +86,9 @@ ShallowWrapper {
           "showModalSuggestion": false,
           "showModalWorks": false,
         },
+        "toggleModalCredits": [Function],
+        "toggleModalSuggestion": [Function],
+        "toggleModalWorks": [Function],
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],

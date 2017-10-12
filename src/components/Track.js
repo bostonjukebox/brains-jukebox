@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import styled from 'styled-components'
@@ -26,21 +26,21 @@ const Button = styled.button`
     cursor: pointer;
 `
 
-const Track = ({name, icon, playing}) =>
-    <Container>
-        <Icon src={icon} alt={`${name} - icon`}/> 
-        {name}
-        {(playing) ?
-            <Button>Stop</Button>
-            : ''    
+const Track = ({ name, icon, playing }) =>
+  <Container>
+    <Icon src={icon} alt={`${name} - icon`} />
+    {name}
+    {(playing) ?
+      <Button>Stop</Button>
+            : ''
         }
-        
-    </Container>
+
+  </Container>
 
 Track.propTypes = {
-    name: PropTypes.string,
-    icon: PropTypes.string,
-    playing: PropTypes.bool,
+  name: PropTypes.string,
+  icon: PropTypes.string,
+  playing: PropTypes.bool,
 }
 
 export default Track

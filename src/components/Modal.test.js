@@ -3,6 +3,6 @@ import { shallow } from 'enzyme'
 import Modal from './Modal'
 
 test('renders ok', () => {
-    const modal = shallow(<Modal />);
-    expect(modal).toMatchSnapshot();
+  const modal = shallow(<Modal />)
+  expect(modal).toMatchSnapshot()
 })
