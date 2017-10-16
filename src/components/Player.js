@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import socketIoClient from 'socket.io-client'
 
@@ -38,88 +38,89 @@ const Button = styled.button`
 `
 
 class Player extends Component {
-    constructor() {
-        super()
-        this.state = {
-            numberOfSongs: 0,
-            index: null,
-            songs: {},
-            flipped: false,
-            volume: 1.0,
-            playing: false,
-        }
-        this.showBack = this.showBack.bind(this);
-        this.showFront = this.showFront.bind(this);
+  constructor() {
+    super()
+    this.state = {
+      numberOfSongs: 0,
+      index: null,
+      songs: {},
+      flipped: false,
+      volume: 1.0,
+      playing: false,
     }
+    this.showBack = this.showBack.bind(this)
+    this.showFront = this.showFront.bind(this)
+  }
 
-    showBack() {
-        this.setState({
-          flipped: true
-        });
-    }
-    
-    showFront() {
-        this.setState({
-          flipped: false
-        });
-    }
+  componentWillMount() {
+    const that = this
+    that.setState({
+      songs: data.songs,
+      numberOfSongs: data.songs.length,
+    })
+    that.socket = socketIoClient('http://localhost:9091')
+    that.socket.on('objectTouched', (object) => {
+      const index = object.toString()
+      that.setState({
+        index,
+        playing: true,
+      })
+    })
+  }
 
-    componentWillMount() {
-        const that = this;
-            that.setState ({
-                songs: data.songs,
-                numberOfSongs: data.songs.length
-            })
-        that.socket = socketIoClient("http://localhost:9091");
-        that.socket.on("objectTouched", (object) => {
-            const index = object.toString();
-            that.setState({
-                index: index,
-                playing: true
-            })
-        })
-    }
-    
+  showBack() {
+    this.setState({
+      flipped: true,
+    })
+  }
 
-    render(){
-        const { songs, index, volume, playing } = this.state
+  showFront() {
+    this.setState({
+      flipped: false,
+    })
+  }
 
-        return(
-            <section>
-            <FlipCard
-                disabled={true}
-                flipped={this.state.flipped}
-                >
-                <Content>
-                    {(index === null) ?
-                        <Text>No song playing :-(</Text> 
+  render() {
+    const {
+      songs, index, volume, playing,
+    } = this.state
+
+    return (
+      <section>
+        <FlipCard
+          disabled
+          flipped={this.state.flipped}
+        >
+          <Content>
+            {(index === null) ?
+              <Text>No song playing :-(</Text>
                         : <SongInfo
-                                song={songs[index]}
-                          />                    
+                          song={songs[index]}
+                        />
                     }
-                    {(index != null) ?
-                        <SongImage song={songs[index]} />
+            {(index != null) ?
+              <SongImage song={songs[index]} />
                         : ''
                     }
-                    {(index != null) ?
-                        <Music song={songs[index]} volume={volume} />
+            {(index != null) ?
+              <Music song={songs[index]} volume={volume} />
                         : ''
                     }
-                    <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>     
-                </Content>
-                <Content>
-                    <MultiTrack playing={playing} />
-                    <Button type="button" ref="backButton" onClick={this.showFront}>Go to single track mode</Button>
-                </Content>
-            </FlipCard>
-            <Vinyl playing={playing} />
-            </section>
-        )
-    }
+            <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>
+          </Content>
+          <Content>
+            <MultiTrack playing={playing} />
+            <Button type="button" ref="backButton" onClick={this.showFront}>Go to single track mode</Button>
+          </Content>
+        </FlipCard>
+        <Vinyl playing={playing} />
+      </section>
+    )
+  }
 }
 
 Player.propTypes = {
-    playing: PropTypes.bool
+  playing: PropTypes.bool,
 }
 
 export default Player

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import socketIoClient from 'socket.io-client'
 
@@ -30,34 +30,35 @@ const defaultTheme = {
 }
 
 class App extends Component {
-  constructor(){
-      super();
-      this.state = {
-          attention: null,
-          signal: null,
-          theme: defaultTheme,
-      }
+  constructor() {
+    super()
+    this.state = {
+      attention: null,
+      signal: null,
+      theme: defaultTheme,
+    }
   }
 
   componentWillMount() {
-    this.socket = socketIoClient("http://localhost:9090");
-    this.socket.on("attentionRate", (attentionLevel) => {
-        this.setState({
-            attention: attentionLevel
-        });
-        if(this.state.attention > 50) {
-            this.setState({theme: relaxedTheme})
-        } else {
-            this.setState({theme: defaultTheme})
-        }
-    });
-    this.socket.on("signalRate", (signalLevel) => {
-        this.setState({
-            signal: signalLevel
-        })
+    this.socket = socketIoClient('http://localhost:9090')
+    this.socket.on('attentionRate', (attentionLevel) => {
+      this.setState({
+        attention: attentionLevel,
+      })
+      if (this.state.attention > 50) {
+        this.setState({ theme: relaxedTheme })
+      } else {
+        this.setState({ theme: defaultTheme })
+      }
+    })
+    this.socket.on('signalRate', (signalLevel) => {
+      this.setState({
+        signal: signalLevel,
+      })
     })
   }
-  
+
+
   render() {
     return (
       <MainContainer theme={this.state.theme}>
@@ -66,8 +67,8 @@ class App extends Component {
         <Player />
         <Menu />
       </MainContainer>
-    );
+    )
   }
 }
 
-export default App;
+export default App

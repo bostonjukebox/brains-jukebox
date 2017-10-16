@@ -16,17 +16,17 @@ const Text = styled.p`
     text-align: left;
     transition: all 3s linear;
 `
-const SystemMessage = ({signal}) =>
-            <Container>
-                {(signal === 200 || signal === null || signal === -1) ?
-                        <Text>Your BrainSensor doesn't have a good connection</Text>
+const SystemMessage = ({ signal }) =>
+  <Container>
+    {(signal === 200 || signal === null || signal === -1) ?
+      <Text>Your BrainSensor doesn't have a good connection</Text>
                    :
-                        <Text>Your BrainSensor is ready!</Text>
-                }    
-            </Container>
+      <Text>Your BrainSensor is ready!</Text>
+                }
+  </Container>
 
 SystemMessage.propTypes = {
-    signal: PropTypes.number
+  signal: PropTypes.number,
 }
 
-export default SystemMessage;
+export default SystemMessage

@@ -4,25 +4,24 @@ import PropTypes from 'prop-types'
 import ReactHowler from 'react-howler'
 
 
-class Music extends Component {
-    render() {
-        const { song, volume } = this.props;
-        const audioPath = require(`../audio/${song.path}`)
-        
-        return (
-        <ReactHowler
-            src={ audioPath }
-            playing={false}
-            html5={true}
-            volume={volume}
-        />
-        )
-    }
+const Music = ({ volume }) => {
+  const audioPath = require(`../audio/${song.path}`)
+  
+  render() {
+    return (
+      <ReactHowler
+        src={audioPath}
+        playing={false}
+        html5
+        volume={volume}
+      />
+    )
+  }
 }
 
 Music.propTypes = {
-    song: PropTypes.object.isRequired,
-    volume: PropTypes.number,
+  song: PropTypes.func,
+  volume: PropTypes.number,
 }
 
 export default Music

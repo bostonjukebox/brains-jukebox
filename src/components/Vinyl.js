@@ -27,17 +27,16 @@ const IconAnimated = Icon.extend`
     animation: ${spin} 4s linear infinite;
 `
 
-const Vinyl = ({playing}) =>
-    <Container>
+const Vinyl = ({ playing }) =>
+  <Container>
     {(playing) ?
-        <IconAnimated src={source} alt="Vinyl" />
-        : 
-        <Icon src={source} alt="Vinyl" />
+      <IconAnimated src={source} alt="Vinyl" />
+      : <Icon src={source} alt="Vinyl" />
     }
-    </Container>
+  </Container>
 
 Vinyl.propTypes = {
-    playing: PropTypes.bool
-}    
+  playing: PropTypes.bool,
+}
 
 export default Vinyl

@@ -15,11 +15,11 @@ const Author = styled.h2`
     margin-top: -1.2em;
 `
 
-const SongInfo = ({song}) => 
-    <Container>
-        <Title>{song.title}</Title>
-        <Author>{song.author}</Author>      
-    </Container>
+const SongInfo = ({ song }) =>
+  <Container>
+    <Title>{song.title}</Title>
+    <Author>{song.author}</Author>
+  </Container>
 
 export default SongInfo
 

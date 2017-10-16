@@ -48,19 +48,19 @@ const Button = styled.button`
     right: .6em;
     cursor: pointer;
 `
-const Modal = ({title, text, handleModal}) =>
-    <Container>
-        <Content>
-            <Button onClick={handleModal}>close</Button>
-            <Title>{title}</Title>
-            <Text>{text}</Text>
-        </Content>
-    </Container>
+const Modal = ({ title, text, handleModal }) =>
+  <Container>
+    <Content>
+      <Button onClick={handleModal}>close</Button>
+      <Title>{title}</Title>
+      <Text>{text}</Text>
+    </Content>
+  </Container>
 
 Modal.propTypes = {
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    handleModal: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  handleModal: PropTypes.func.isRequired,
 }
 
 export default Modal
