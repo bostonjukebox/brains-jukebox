@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import styled from 'styled-components'
@@ -11,22 +11,19 @@ const Container = styled.section`
     top: 5px;
     right: 15px;
 `
-class SongImage extends Component {
-    render(){
-        const { song } = this.props;
-        const source = require(`../img/${song.img}`);
 
-        return (           
-        <Container>    
-            <Image src={source} alt={`${song.title} from ${song.author}`} /> 
-        </Container>
-        )
-    }
+const SongImage = ({ song }) => {
+  const source = require(`../img/${song.img}`)
+  return (
+    <Container>
+      <Image src={source} alt={`${song.title} from ${song.author}`} />
+    </Container>
+  )
 }
 
 SongImage.propTypes = {
-    song: PropTypes.object.isRequired
-}    
+  song: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default SongImage
 

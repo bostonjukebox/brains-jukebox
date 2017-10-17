@@ -84,7 +84,7 @@ class Player extends Component {
     const {
       songs, index, volume, playing,
     } = this.state
-
+    console.log(songs)
     return (
       <section>
         <FlipCard

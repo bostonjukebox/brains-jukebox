@@ -24,5 +24,5 @@ const SongInfo = ({ song }) =>
 export default SongInfo
 
 SongInfo.propTypes = {
-  song: PropTypes.object.isRequired,
+  song: PropTypes.func.isRequired,
 }

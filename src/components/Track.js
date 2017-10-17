@@ -34,7 +34,6 @@ const Track = ({ name, icon, playing }) =>
       <Button>Stop</Button>
             : ''
         }
-
   </Container>
 
 Track.propTypes = {
