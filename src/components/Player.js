@@ -84,7 +84,6 @@ class Player extends Component {
     const {
       songs, index, volume, playing,
     } = this.state
-    console.log(songs)
     return (
       <section>
         <FlipCard
@@ -117,10 +116,6 @@ class Player extends Component {
       </section>
     )
   }
-}
-
-Player.propTypes = {
-  playing: PropTypes.bool,
 }
 
 export default Player
