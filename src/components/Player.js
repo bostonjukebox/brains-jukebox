@@ -69,12 +69,16 @@ class Player extends Component {
   showBack() {
     this.setState({
       flipped: true,
+      playing: false,
+      index: null,
     })
   }
 
   showFront() {
     this.setState({
       flipped: false,
+      playing: false,
+      index: null,
     })
   }
 
@@ -100,7 +104,7 @@ class Player extends Component {
                         : ''
                     }
             {(index != null) ?
-              <Music song={songs[index]} volume={volume} />
+              <Music song={songs[index]} volume={volume} playing={playing} />
                         : ''
                     }
             <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>
