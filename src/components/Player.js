@@ -40,7 +40,6 @@ class Player extends Component {
   constructor() {
     super()
     this.state = {
-      numberOfSongs: 0,
       index: null,
       songs: {},
       flipped: false,
