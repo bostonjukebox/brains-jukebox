@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import socketIoClient from 'socket.io-client'
 
 import styled from 'styled-components'
