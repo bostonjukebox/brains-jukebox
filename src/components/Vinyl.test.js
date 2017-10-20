@@ -1,8 +1,9 @@
+import 'jest-styled-components'
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
 import Vinyl from './Vinyl'
 
 test('renders without crashing', () => {
-  const tree = renderer.create(<Vinyl />).toJSON()
-  expect(tree).toMatchSnapshot()
+  const component = shallow(<Vinyl />)
+  expect(component).toMatchSnapshot()
 })
