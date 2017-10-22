@@ -2,14 +2,10 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Player from './Player'
 
-describe('Player', () => {
+describe('Player rendering', () => {
   it('renders without crashing', () => {
     const component = shallow(<Player />)
     expect(component).toHaveLength(1)
-  })
-  it('Song data is loaded', () => {
-    const component = shallow(<Player />)
-    expect(component.state().numberOfSongs).toBeGreaterThan(0)
   })
   it('renders <SongImage /> when a song is playing', () => {
     const component = shallow(<Player />)
@@ -20,5 +16,12 @@ describe('Player', () => {
     const component = shallow(<Player />)
     component.setState({ index: 1 })
     expect(component.find('SongInfo')).toHaveLength(1)
+  })
+})
+
+describe('Player data', () => {
+  it('Song data is loaded', () => {
+    const component = shallow(<Player />)
+    expect(component.state().numberOfSongs).toBeGreaterThan(0)
   })
 })

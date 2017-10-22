@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import ReactHowler from 'react-howler'
 
-
 const Music = ({ song, volume, playing }) => {
   const audioPath = require(`../audio/${song.path}`)
   return (

@@ -30,7 +30,7 @@ const IconAnimated = Icon.extend`
 const Vinyl = ({ playing }) =>
   <Container>
     {(playing) ?
-      <IconAnimated src={source} alt="Vinyl" />
+      <IconAnimated src={source} alt="Vinyl moving" />
       : <Icon src={source} alt="Vinyl" />
     }
   </Container>
