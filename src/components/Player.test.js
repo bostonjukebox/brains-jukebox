@@ -5,7 +5,7 @@ import Player from './Player'
 describe('Player', () => {
   it('renders without crashing', () => {
     const component = shallow(<Player />)
-    console.log(component)
+    expect(component).toHaveLength(1)
   })
   it('Song data is loaded', () => {
     const component = shallow(<Player />)
