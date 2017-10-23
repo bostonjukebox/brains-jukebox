@@ -22,6 +22,6 @@ describe('Player rendering', () => {
 describe('Player data', () => {
   it('Song data is loaded', () => {
     const component = shallow(<Player />)
-    expect(component.state().numberOfSongs).toBeGreaterThan(0)
+    expect(component.state().songs).toBeGreaterThan(0)
   })
 })
