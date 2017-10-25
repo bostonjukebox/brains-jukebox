@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import Player from './Player'
 
 describe('Player rendering', () => {
@@ -16,12 +16,5 @@ describe('Player rendering', () => {
     const component = shallow(<Player />)
     component.setState({ index: 1 })
     expect(component.find('SongInfo')).toHaveLength(1)
-  })
-})
-
-describe('Player data', () => {
-  it('Song data is loaded', () => {
-    const component = shallow(<Player />)
-    expect(component.state().songs).toBeGreaterThan(0)
   })
 })
