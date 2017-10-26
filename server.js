@@ -1,13 +1,12 @@
-const io = require('socket.io')();
-const nodeThinkGear = require('node-thinkgear-sockets');
+const io = require('socket.io')()
+const nodeThinkGear = require('node-thinkgear-sockets')
 const tgClient = nodeThinkGear.createClient({
-    enableRawOutput: true
-});
-tgClient.connect();
+  enableRawOutput: true,
+})
+tgClient.connect()
 
 io.on('connection', (client) => {
-
-  tgClient.on('data', function(data) {
+  tgClient.on('data', (data) => {
     let signal = data.poorSignalLevel;
     let attention = data.eSense.attention;
 
@@ -15,32 +14,32 @@ io.on('connection', (client) => {
     client.emit('attentionRate', attention);
     
     
-    console.log(signal);
+
     console.log(attention);
-  });
+  })
 
 
-});
+})
 
-const port = 9090;
-io.listen(port);
-console.log('listening on port ', port);
+const port = 9090
+io.listen(port)
+console.log('listening on port ', port)
 
 //Arduino server
-var argv = require("minimist")(process.argv.slice(2), {
+var argv = require('minimist')(process.argv.slice(2), {
   default: {
-    show: 1
-  }
-});
+    show: 1,
+  },
+})
 
-var five = require("johnny-five");
-const port2 = 9091;
-var io2 = require('socket.io')();
-io2.listen(port2);
-var board = new five.Board();
+var five = require('johnny-five')
+const port2 = 9091
+var io2 = require('socket.io')()
+io2.listen(port2)
+var board = new five.Board()
 
 
-board.on("ready", function() {
+board.on('ready', () => {
   console.log("Arduino is on");
 
   io2.sockets.on('connection', function (socket) {
@@ -79,4 +78,4 @@ board.on("ready", function() {
         });
   });
 
-});
+})

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import socketIoClient from 'socket.io-client'
 import firebase from 'firebase'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+
 
 import FlipCard from 'react-flipcard'
 
@@ -41,7 +43,6 @@ class Player extends Component {
       index: null,
       songs: {},
       flipped: false,
-      volume: 1.0,
       playing: false,
     }
     this.showBack = this.showBack.bind(this)
@@ -94,7 +95,7 @@ class Player extends Component {
 
   render() {
     const {
-      songs, index, volume, playing,
+      songs, index, playing,
     } = this.state
     return (
       <section>
@@ -114,7 +115,7 @@ class Player extends Component {
                         : ''
                     }
             {(index != null) ?
-              <Music song={songs[index]} volume={volume} playing={playing} />
+              <Music song={songs[index]} volume={this.props.volume} playing={playing} />
                         : ''
                     }
             <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>
@@ -131,3 +132,7 @@ class Player extends Component {
 }
 
 export default Player
+
+Player.propTypes = {
+  volume: PropTypes.number,
+}

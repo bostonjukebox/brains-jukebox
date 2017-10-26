@@ -36,6 +36,7 @@ class App extends Component {
       attention: null,
       signal: null,
       theme: defaultTheme,
+      volume: 1.0,
     }
   }
 
@@ -44,8 +45,9 @@ class App extends Component {
     this.socket.on('attentionRate', (attentionLevel) => {
       this.setState({
         attention: attentionLevel,
+        volume: attentionLevel / 100,
       })
-      if (this.state.attention > 50) {
+      if (this.state.attention > 60) {
         this.setState({ theme: relaxedTheme })
       } else {
         this.setState({ theme: defaultTheme })
@@ -64,7 +66,7 @@ class App extends Component {
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />
         <MainTitle />
-        <Player />
+        <Player volume={this.state.volume} />
         <Menu />
       </MainContainer>
     )

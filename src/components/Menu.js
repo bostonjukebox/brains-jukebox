@@ -88,7 +88,7 @@ class Menu extends Component {
         {(this.state.showModalCredits) ?
           <Modal
             title="Credits"
-            text="Boston TouchJukebox started thesis project of Tiago Costa under the supervising of Ravi Jain (2017). Now is a sideproject in full development ;-) \n\nContact: tiago@tiagocosta.co"
+            text="Boston TouchJukebox started as a thesis project of Tiago Costa under the supervising of Ravi Jain (2017). Now is a sideproject in full development ;-) Contact: tiago@tiagocosta.co"
             handleModal={this.toggleModalCredits}
           />
                 : ''
