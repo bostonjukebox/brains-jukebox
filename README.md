@@ -2,7 +2,7 @@
 
 Project that lets people listen to music based on their mood (brain sensor reading)
 
-Made with ReactJS, Arduino, Firebase, NodeJS
+Made with ReactJS, Arduino, NodeJS
 
 ## Motivation
 
