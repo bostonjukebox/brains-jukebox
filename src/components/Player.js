@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import socketIoClient from 'socket.io-client'
-import firebase from 'firebase'
+// import firebase from 'firebase'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 
 import FlipCard from 'react-flipcard'
+import data from '../data/songs.json'
 
 import SongInfo from './SongInfo'
 import SongImage from './SongImage'
@@ -51,22 +52,9 @@ class Player extends Component {
 
   componentWillMount() {
     const that = this
-    if (firebase.apps.length === 0) {
-      firebase.initializeApp({
-        apiKey: 'AIzaSyDz7703BuJDyi_H8w-SlA6tkQ9LQ6p_SiI',
-        authDomain: 'touch-boston-jukebox.firebaseapp.com',
-        databaseURL: 'https://touch-boston-jukebox.firebaseio.com',
-        projectId: 'touch-boston-jukebox',
-        storageBucket: 'touch-boston-jukebox.appspot.com',
-        messagingSenderId: '574048057799',
-      })
-      firebase.database().ref('/')
-        .on('value', (snapshot) => {
-          this.setState({
-            songs: snapshot.val().songs,
-          })
-        })
-    }
+    that.setState({
+      songs: data.songs,
+    })
     that.socket = socketIoClient('http://localhost:9091')
     that.socket.on('objectTouched', (object) => {
       const index = object.toString()
