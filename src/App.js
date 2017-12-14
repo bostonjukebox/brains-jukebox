@@ -43,10 +43,12 @@ class App extends Component {
   componentWillMount() {
     this.socket = socketIoClient('http://localhost:9090')
     this.socket.on('attentionRate', (attentionLevel) => {
-      this.setState({
-        attention: attentionLevel,
-        volume: attentionLevel / 100,
-      })
+      setTimeout(() => {
+        this.setState({
+          attention: attentionLevel,
+          volume: attentionLevel / 100,
+        })
+      }, 3000)
       if (this.state.attention > 60) {
         this.setState({ theme: relaxedTheme })
       } else {
