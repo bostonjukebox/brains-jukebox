@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Player from './Player'
+import Player from '../components/Player'
 
 describe('Player rendering', () => {
   it('renders without crashing', () => {

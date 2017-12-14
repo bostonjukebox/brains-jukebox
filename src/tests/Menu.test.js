@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Menu from './Menu'
+import Menu from '../components/Menu'
 
 
 describe('Menu', () => {

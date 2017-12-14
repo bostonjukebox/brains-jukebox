@@ -21,12 +21,17 @@ const MainContainer = styled.div`
 const relaxedTheme = {
   background: '#ADD8E6',
   color: '#000',
-  transition: 'background 3s linear, color 3s linear',
+  transition: 'background 8s linear, color 8s linear',
 }
 const defaultTheme = {
   background: '#F44336',
   color: '#FFF',
-  transition: 'background 3s linear, color 3s linear',
+  transition: 'background 8s linear, color 8s linear',
+}
+const stressedTheme = {
+  background: '#f1c40f',
+  color: '#000',
+  transition: 'background 8s linear, color 8s linear',
 }
 
 class App extends Component {
@@ -43,14 +48,15 @@ class App extends Component {
   componentWillMount() {
     this.socket = socketIoClient('http://localhost:9090')
     this.socket.on('attentionRate', (attentionLevel) => {
-      setTimeout(() => {
-        this.setState({
-          attention: attentionLevel,
-          volume: attentionLevel / 100,
-        })
-      }, 3000)
-      if (this.state.attention > 60) {
+      this.setState({
+        attention: attentionLevel,
+        volume: attentionLevel / 100,
+      })
+
+      if (this.state.attention >= 80) {
         this.setState({ theme: relaxedTheme })
+      } else if (this.state.attention <= 40) {
+        this.setState({ theme: stressedTheme })
       } else {
         this.setState({ theme: defaultTheme })
       }

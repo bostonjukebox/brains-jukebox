@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Modal from './Modal'
+import Modal from '../components/Modal'
 
 test('renders ok', () => {
   const modal = shallow(<Modal />)

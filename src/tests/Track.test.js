@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Track from './Track'
+import Track from '../components/Track'
 
 describe('Track', () => {
   test('it renders without crashing', () => {

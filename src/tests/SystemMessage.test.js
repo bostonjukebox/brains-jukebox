@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import SystemMessage from './SystemMessage'
+import SystemMessage from '../components/SystemMessage'
 
 describe('System Message', () => {
   test('runs without crashing', () => {
