@@ -7,33 +7,6 @@ import MainTitle from './components/MainTitle'
 import Player from './components/Player'
 import Menu from './components/Menu'
 
-const MainContainer = styled.div`
-  font-family: 'Montserrat', Verdana, sans-serif;
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background: ${props => props.theme.background};
-  color: ${props => props.theme.color};
-  transition: ${props => props.theme.transition};
-`
-
-const relaxedTheme = {
-  background: '#ADD8E6',
-  color: '#000',
-  transition: 'background 8s linear, color 8s linear',
-}
-const defaultTheme = {
-  background: '#F44336',
-  color: '#FFF',
-  transition: 'background 8s linear, color 8s linear',
-}
-const stressedTheme = {
-  background: '#f1c40f',
-  color: '#000',
-  transition: 'background 8s linear, color 8s linear',
-}
-
 class App extends Component {
   constructor() {
     super()
@@ -82,3 +55,29 @@ class App extends Component {
 }
 
 export default App
+
+const MainContainer = styled.div`
+  font-family: 'Montserrat', Verdana, sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: ${props => props.theme.background};
+  color: ${props => props.theme.color};
+  transition: ${props => props.theme.transition};
+  `
+const relaxedTheme = {
+  background: '#ADD8E6',
+  color: '#000',
+  transition: 'background 8s linear, color 8s linear',
+}
+const defaultTheme = {
+  background: '#F44336',
+  color: '#FFF',
+  transition: 'background 8s linear, color 8s linear',
+}
+const stressedTheme = {
+  background: '#f1c40f',
+  color: '#000',
+  transition: 'background 8s linear, color 8s linear',
+}
