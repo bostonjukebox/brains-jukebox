@@ -4,7 +4,6 @@ import socketIoClient from 'socket.io-client'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-
 import FlipCard from 'react-flipcard'
 import data from '../data/songs.json'
 
@@ -36,6 +35,19 @@ const Button = styled.button`
     left: .62em;
     cursor: pointer;
 `
+const ButtonPrimary = styled.button`
+  appearance: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: .8rem;
+  padding: .31em .62em;
+  position: absolute;
+  top: 12em;
+  left: 13em;
+  cursor: pointer;
+`
 
 class Player extends Component {
   constructor() {
@@ -45,9 +57,11 @@ class Player extends Component {
       songs: {},
       flipped: false,
       playing: false,
+      textButton: true,
     }
     this.showBack = this.showBack.bind(this)
     this.showFront = this.showFront.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentWillMount() {
@@ -81,6 +95,13 @@ class Player extends Component {
     })
   }
 
+  handleClick() {
+    this.setState({
+      playing: !this.state.playing,
+      textButton: !this.state.textButton,
+    })
+  }
+
   render() {
     const {
       songs, index, playing,
@@ -107,6 +128,7 @@ class Player extends Component {
                         : ''
                     }
             <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>
+            <ButtonPrimary onClick={this.handleClick}>{this.state.textButton ? 'pause' : 'play '}</ButtonPrimary>
           </Content>
           <Content>
             <MultiTrack playing={playing} />
