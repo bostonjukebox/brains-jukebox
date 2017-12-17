@@ -12,7 +12,7 @@ A headband sensor is used to capture the user's mood, and touch sensors attached
 
 According to users mood, the interface changes its colors and, based on their touch, a song is suggested.
 
-![Alt text](https://preview.ibb.co/nbd0Em/screen01.png " ")
+![Alt text](https://preview.ibb.co/g7GpqR/screenshot122017.png " ")
 ## Getting Started
 
 **Important:** You need a brain sensor headband [Neurosky](http://neurosky.com/) and an Arduino connect to an [Adafruit 12 X Capactive Touch Shield MPR121](https://www.adafruit.com/product/2024)
