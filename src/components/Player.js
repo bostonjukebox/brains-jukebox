@@ -13,42 +13,6 @@ import MultiTrack from './MultiTrack'
 import Music from './Music'
 import Vinyl from './Vinyl'
 
-const Content = styled.section`
-    padding: 1em;
-    position: relative;
-    margin-top: -1em;
-`
-
-const Text = styled.p`
-    margin-top: 1em;
-`
-const Button = styled.button`
-    appearance: none;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    outline: none;
-    font-size: .8rem;
-    padding: .31em .62em;
-    position: absolute;
-    top: 12em;
-    left: .62em;
-    cursor: pointer;
-`
-const ButtonPrimary = styled.button`
-  appearance: none;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  outline: none;
-  font-size: .8rem;
-  padding: .31em .62em;
-  position: absolute;
-  top: 12em;
-  left: 13em;
-  cursor: pointer;
-`
-
 class Player extends Component {
   constructor() {
     super()
@@ -61,7 +25,8 @@ class Player extends Component {
     }
     this.showBack = this.showBack.bind(this)
     this.showFront = this.showFront.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handlePauseClick = this.handlePauseClick.bind(this)
+    this.handleStopClick = this.handleStopClick.bind(this)
   }
 
   componentWillMount() {
@@ -95,10 +60,18 @@ class Player extends Component {
     })
   }
 
-  handleClick() {
+  handlePauseClick() {
     this.setState({
       playing: !this.state.playing,
       textButton: !this.state.textButton,
+    })
+  }
+
+  handleStopClick() {
+    this.setState({
+      playing: false,
+      textButton: true,
+      index: null,
     })
   }
 
@@ -128,7 +101,8 @@ class Player extends Component {
                         : ''
                     }
             <Button type="button" onClick={this.showBack}>Go to multitrack mode</Button>
-            <ButtonPrimary onClick={this.handleClick}>{this.state.textButton ? 'pause' : 'play '}</ButtonPrimary>
+            <ButtonPrimary onClick={this.handlePauseClick}>{this.state.textButton ? 'pause' : 'play '}</ButtonPrimary>
+            <ButtonPrimary2 onClick={this.handleStopClick}>Stop</ButtonPrimary2>
           </Content>
           <Content>
             <MultiTrack playing={playing} />
@@ -146,3 +120,52 @@ export default Player
 Player.propTypes = {
   volume: PropTypes.number,
 }
+
+const Content = styled.section`
+  padding: 1em;
+  position: relative;
+  margin-top: -1em;
+`
+
+const Text = styled.p`
+  margin-top: 1em;
+`
+const Button = styled.button`
+  appearance: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: .8rem;
+  padding: .31em .62em;
+  position: absolute;
+  top: 12em;
+  left: .62em;
+  cursor: pointer;
+`
+const ButtonPrimary = styled.button`
+  appearance: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: .8rem;
+  padding: .31em .62em;
+  position: absolute;
+  top: 12em;
+  left: 13em;
+  cursor: pointer;
+`
+const ButtonPrimary2 = styled.button`
+  appearance: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: .8rem;
+  padding: .31em .62em;
+  position: absolute;
+  top: 12em;
+  left: 18em;
+  cursor: pointer;
+`

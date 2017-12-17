@@ -21,10 +21,12 @@ class App extends Component {
   componentWillMount() {
     this.socket = socketIoClient('http://localhost:9090')
     this.socket.on('attentionRate', (attentionLevel) => {
-      this.setState({
-        attention: attentionLevel,
-        volume: attentionLevel / 100,
-      })
+      setInterval(() => {
+        this.setState({
+          attention: attentionLevel,
+          volume: attentionLevel / 100,
+        })
+      }, 10000)
 
       if (this.state.attention >= 80) {
         this.setState({ theme: relaxedTheme })
