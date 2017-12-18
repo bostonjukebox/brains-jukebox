@@ -18,15 +18,13 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.socket = socketIoClient('http://localhost:9090')
     this.socket.on('attentionRate', (attentionLevel) => {
-      setInterval(() => {
-        this.setState({
-          attention: attentionLevel,
-          volume: attentionLevel / 100,
-        })
-      }, 10000)
+      this.setState({
+        attention: attentionLevel,
+        volume: Math.round((attentionLevel * 10) / 100),
+      })
 
       if (this.state.attention >= 80) {
         this.setState({ theme: relaxedTheme })
@@ -43,8 +41,12 @@ class App extends Component {
     })
   }
 
+  componentWillUnmount() {
+
+  }
 
   render() {
+    console.log(this.state.volume)
     return (
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />

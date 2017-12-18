@@ -29,7 +29,7 @@ class Player extends Component {
     this.handleStopClick = this.handleStopClick.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const that = this
     that.setState({
       songs: data.songs,
