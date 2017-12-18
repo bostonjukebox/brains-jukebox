@@ -41,12 +41,7 @@ class App extends Component {
     })
   }
 
-  componentWillUnmount() {
-
-  }
-
   render() {
-    console.log(this.state.volume)
     return (
       <MainContainer theme={this.state.theme}>
         <SystemMessage signal={this.state.signal} />

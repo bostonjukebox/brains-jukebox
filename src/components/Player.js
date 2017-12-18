@@ -106,7 +106,13 @@ class Player extends Component {
           </Content>
           <Content>
             <MultiTrack playing={playing} />
-            <Button type="button" ref="backButton" onClick={this.showFront}>Go to single track mode</Button>
+            <Button
+              type="button"
+              ref="backButton"
+              onClick={this.showFront}
+            >
+              Go to single track mode
+            </Button>
           </Content>
         </FlipCard>
         <Vinyl playing={playing} />
