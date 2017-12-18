@@ -10,19 +10,19 @@ ShallowWrapper {
   "length": 1,
   "node": <styled.div>
     <styled.h1>
-        Boston Touch Jukebox
+        Boston Brains Jukebox
     </styled.h1>
     <styled.h2>
-        Touch and listen to local music
+        Touch, think and listen to local music
     </styled.h2>
 </styled.div>,
   "nodes": Array [
     <styled.div>
       <styled.h1>
-            Boston Touch Jukebox
+            Boston Brains Jukebox
       </styled.h1>
       <styled.h2>
-            Touch and listen to local music
+            Touch, think and listen to local music
       </styled.h2>
 </styled.div>,
   ],
@@ -62,19 +62,19 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <styled.div>
           <styled.h1>
-                    Boston Touch Jukebox
+                    Boston Brains Jukebox
           </styled.h1>
           <styled.h2>
-                    Touch and listen to local music
+                    Touch, think and listen to local music
           </styled.h2>
 </styled.div>,
         "_debugID": 2,
         "_renderedOutput": <styled.div>
           <styled.h1>
-                    Boston Touch Jukebox
+                    Boston Brains Jukebox
           </styled.h1>
           <styled.h2>
-                    Touch and listen to local music
+                    Touch, think and listen to local music
           </styled.h2>
 </styled.div>,
       },
