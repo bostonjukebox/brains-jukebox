@@ -1,6 +1,6 @@
 # Boston Brains Jukebox
 
-Project that lets people listen to music based on their mood (brain sensor reading)
+Proof of concept (POC) that lets people listen to music based on their mood (brain sensor reading)
 
 Made with ReactJS, Arduino, NodeJS
 
